@@ -1,21 +1,24 @@
 
 // Updates time every second
-let currentDayDisplay = $('#currentDay').text(moment().format('LLLL')) 
-
+let currentDayDisplay = $('#currentDay').text(moment().format('LLLL'))
+let currentHour = moment().format('HH')
+let time = moment().format()
 setInterval(function () {
     $('#currentDay').text(moment().format('LLLL'))
-    
+    currentHour = moment().format('HH')
 }, 1000)
 
 // Checks every hour
 setInterval(function () {
     // Code
-    $('hour-num').each( function(i) {
-
-    })
 }, 3600000)
 
-console.log(moment().format('HH'))
-$('textarea').each(function (i) {
-    console.log($('textarea')[i])
+$('.time-block').each(function (i) {
+
+    console.log($(this))
+    if ( moment(currentHour).isSame($(this).find('.hour-num').text()) ) {
+        console.log($(this).find('textarea'), currentHour)
+        $(this).find('textarea').toggleClass('past present')
+    }
+
 })

@@ -1,13 +1,21 @@
-$('#currentDay').text(moment().format('MMMM Do YYYY, h:mm:ss a'))
+
 // Updates time every second
-let currentDayDisplay = setInterval(function(){
-    $('#currentDay').text(moment().format('MMMM Do YYYY, h:mm:ss a'))
+let currentDayDisplay = $('#currentDay').text(moment().format('LLLL')) 
+
+setInterval(function () {
+    $('#currentDay').text(moment().format('LLLL'))
+    
 }, 1000)
 
 // Checks every hour
-setInterval(function() {
-// Code
+setInterval(function () {
+    // Code
+    $('hour-num').each( function(i) {
+
+    })
 }, 3600000)
 
-
-console.log($('textarea'))
+console.log(moment().format('HH'))
+$('textarea').each(function (i) {
+    console.log($('textarea')[i])
+})

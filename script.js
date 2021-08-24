@@ -34,7 +34,7 @@ setInterval(function () {
 }, 1000)
 
 // loop that creates the timeBlock objects and sets the colors of the textareas
-$('.time-block').each(function (i) {
+$('.time-block').each(i => {
 
     timeBlocks.push(new hourBlock((i + 9), $(this).find('textarea'), $(this).find('.saveBtn')))
     timeBlocks[i].loadEvents()

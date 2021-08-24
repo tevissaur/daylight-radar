@@ -16,16 +16,13 @@ class hourBlock {
     }
     // Will eventually load tasks into the textareas
     loadEvents() {
-        localStorage.setItem('test', 'value')
-        this.taskEl.val(localStorage.getItem('test'))
+        this.taskEl.val(localStorage.getItem(this.time))
     }
     // Saves the tasks into local data
     saveButton() {
-        this.buttonEl.on('click', function (e) {
-            console.log(e.target)
-            let target = e.target
-            let hourBlock = $(e.target).closest('div.row').find('.hour-num').text()
+        this.buttonEl.on('click', e => {
             let task = $(e.target).closest('div.row').find('textarea').val()
+            localStorage.setItem(this.time, task)
         })
     }
 }

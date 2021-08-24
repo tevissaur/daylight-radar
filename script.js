@@ -50,4 +50,3 @@ $('.time-block').each(function (i) {
     }
 
 })
-console.log(timeBlocks)

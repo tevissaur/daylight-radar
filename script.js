@@ -20,7 +20,7 @@ class hourBlock {
     }
     // Saves the tasks into local data
     saveButton() {
-        this.buttonEl.on('click', e => {
+        this.buttonEl.click(function(e) {
             let task = $(e.target).closest('div.row').find('textarea').val()
             localStorage.setItem(this.time, task)
         })
@@ -34,7 +34,7 @@ setInterval(function () {
 }, 1000)
 
 // loop that creates the timeBlock objects and sets the colors of the textareas
-$('.time-block').each(i => {
+$('.time-block').each(function(i) {
 
     timeBlocks.push(new hourBlock((i + 9), $(this).find('textarea'), $(this).find('.saveBtn')))
     timeBlocks[i].loadEvents()

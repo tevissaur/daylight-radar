@@ -21,8 +21,6 @@ class hourBlock {
     // Saves the tasks into local data
     saveButton() {
         this.buttonEl.on('click', e => {
-            let hour = $(e.target)
-            console.log(hour)
             let task = $(e.target).closest('div.row').find('textarea').val()
             localStorage.setItem(this.time, task)
         })
